@@ -30,7 +30,7 @@ cat > github.sh <<-EOF
 set username [lindex $argv 0]
 set password [lindex $argv 1]
 
-echo $password
+bash echo $password
 
 spawn git push origin master
 expect "*sername*"
