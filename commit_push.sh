@@ -25,7 +25,7 @@ git add *
 git commit -m \'$nowtime\'
 
 cat > github.sh <<-EOF
-#!/usr/bin/expect -f
+#!/usr/bin/expect 
 
 set username [lindex $argv 0]
 set password [lindex $argv 1]
