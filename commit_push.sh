@@ -1,7 +1,7 @@
 #!/bin/bash
 
 username=9p15p
-passwd=ldz19980104
+password=ldz19980104
 
 nowtime=$(date "+%Y-%m-%d-%H:%M:%S")
 
@@ -28,7 +28,7 @@ cat > github.sh <<-EOF
 #!/usr/bin/expect -f
 
 set username [lindex $argv 0]
-set passwd [lindex $argv 1]
+set password [lindex $argv 1]
 
 spawn echo $username
 
@@ -36,12 +36,12 @@ spawn git push origin master
 expect "*sername*"
 send "$username\n"
 expect "*assword*"
-send "$passwd\n"
+send "$password\n"
 interact
 EOF
 
 chmod +x github.sh
 
-expect github.sh $username$passwd
+expect github.sh $username$password
 
 rm -rf github.sh
