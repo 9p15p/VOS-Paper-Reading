@@ -27,8 +27,9 @@ git commit -m \'$nowtime\'
 cat > github.sh <<-EOF
 #!/usr/bin/expect -f
 
-set username [lindex $argv 0]
-set password [lindex $argv 1]
+set password [lindex $argv 0]
+set username [lindex $argv 1]
+
 
 
 spawn git push origin master
@@ -41,6 +42,6 @@ EOF
 
 chmod +x github.sh
 
-expect github.sh $username$passwd
+expect github.sh $passwd$username
 
 rm -rf github.sh
