@@ -5,23 +5,32 @@
 过去的方法太依赖complex recurrent 和CNN了。我们提出了一种全新的结构，这种结构ceshi
 
 ```
-#!/usr/bin/expect -f
+#!/bin/bash
 
-set username [lindex $argv 0]
-set password [lindex $argv 1]
-NOW_TIME=$(date "+%Y-%m-%d-%H:%M:%S")
-echo $NOW_TIME
+#快捷上传小助手，
+#注意保护好自己的密码
+#需要安装/usr/bin/expect 
 
-git add *
-git commit -m \'$NOW_TIME\'
-spawn git push origin master
-expect "*sername:*"
-send "$username"
-expect "*assword:*"
-send "$password"
-interact
-~            
-------------------------------------------------------------------
+username=9p15p
+password=ldz19980104
+
+nowtime=$(date "+%Y-%m-%d-%H:%M:%S")
+
+if [ -f ".gitignore" ];then
+	echo ".gitgnore存在"
+	if cat '.gitignore' | grep "commit_push.sh" > /dev/null
+		then
+		    echo "commit_push.sh已存在"
+		else
+		    echo "在.gitignore中追加commit_push.sh"
+		    echo "commit_push.sh" >> ./.gitignore
+	fi
+else
+	echo "创建.gitignore中并加入commit_push.sh"
+	cat > .gitignore<<-EOF
+		commit_push.sh	
+	EOF
+fi
 
 git add *
 git commit -m \'$nowtime\'
@@ -31,25 +40,20 @@ cat > github.sh <<-EOF
 
 set username [lindex $argv 0]
 set password [lindex $argv 1]
-set nowtime  [lindex $argv 2]
-
 
 spawn git push origin master
 expect "*sername*"
-send "$username\r"
+send "$username\n"
 expect "*assword*"
-send "$password\r"
+send "$password\n"
 interact
 EOF
 
 chmod +x github.sh
 
-expect github.sh $username $passwd $nowtime
+expect github.sh $username$password
 
 rm -rf github.sh
-
-
-
 ```
 
 再次测试

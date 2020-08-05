@@ -3,7 +3,7 @@
 #快捷上传小助手，
 #注意保护好自己的密码
 #需要安装/usr/bin/expect 
-
+#测试2.0
 username=9p15p
 password=ldz19980104
 
