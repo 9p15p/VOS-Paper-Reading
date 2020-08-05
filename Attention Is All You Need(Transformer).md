@@ -45,7 +45,7 @@ spawn git push origin master
 expect "*sername*"
 send "$username\n"
 expect "*assword*"
-send "$password\n"
+send "$password\n"你好
 interact
 EOF
 
