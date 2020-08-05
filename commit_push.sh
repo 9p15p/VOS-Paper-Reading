@@ -29,7 +29,6 @@ cat > github.sh <<-EOF
 
 set username [lindex $argv 0]
 set password [lindex $argv 1]
-set nowtime  [lindex $argv 2]
 
 
 spawn git push origin master
@@ -42,6 +41,6 @@ EOF
 
 chmod +x github.sh
 
-expect github.sh $username $passwd $nowtime
+expect github.sh $username $passwd
 
 rm -rf github.sh
