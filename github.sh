@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 cat > .gitignore <<-EOF
         github.sh
