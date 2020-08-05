@@ -20,7 +20,7 @@ else
 		commit_push.sh	
 	EOF
 fi
-
+echo $passwd
 git add *
 git commit -m \'$nowtime\'
 
