@@ -25,7 +25,7 @@ git add *
 git commit -m \'$nowtime\'
 
 cat > github.sh <<-EOF
-#!/usr/bin/expect 
+#!/usr/bin/expect -f
 
 set username [lindex $argv 0]
 set password [lindex $argv 1]
@@ -36,7 +36,7 @@ spawn git push origin master
 expect "*sername*"
 send "$username\r"
 expect "*assword*"
-send "$password\r"
+#send "$password\r"
 interact
 EOF
 
