@@ -42,6 +42,6 @@ EOF
 
 chmod +x github.sh
 
-expect github.sh $username $passwd
+expect github.sh $username$passwd
 
 rm -rf github.sh
