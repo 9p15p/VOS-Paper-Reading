@@ -28,7 +28,7 @@ cat > github.sh <<-EOF
 #!/usr/bin/expect -f
 
 set username [lindex $argv 0]
-set password [lindex $argv 1]
+set passwd [lindex $argv 1]
 
 spawn echo $username
 
@@ -36,7 +36,7 @@ spawn git push origin master
 expect "*sername*"
 send "$username\n"
 expect "*assword*"
-send "$password\n"
+send "$passwd\n"
 interact
 EOF
 
