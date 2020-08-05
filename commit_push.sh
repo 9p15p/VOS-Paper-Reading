@@ -1,7 +1,7 @@
 #!/bin/bash
 
 username=9p15p
-
+passwd=ldz19980104
 
 nowtime=$(date "+%Y-%m-%d-%H:%M:%S")
 
@@ -28,8 +28,8 @@ cat > github.sh <<-EOF
 #!/usr/bin/expect -f
 
 set username [lindex $argv 0]
-#set password [lindex $argv 1]
-set passwd ldz19980104
+set password [lindex $argv 1]
+
 
 spawn git push origin master
 expect "*sername*"
