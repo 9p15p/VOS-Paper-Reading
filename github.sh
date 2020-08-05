@@ -7,7 +7,7 @@ set nowtime  [lindex $argv 2]
 
 spawn git push origin master
 expect "*sername*"
-send "$username"
+send "$username\r"
 expect "*assword*"
-send "$password"
+send "$password\r"
 interact
