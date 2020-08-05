@@ -34,9 +34,9 @@ spawn echo $password
 
 spawn git push origin master
 expect "*sername*"
-send "$username\r"
+send "$username\n"
 expect "*assword*"
-#send "$password\r"
+#send "$password\n"
 interact
 EOF
 
