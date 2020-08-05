@@ -4,7 +4,7 @@
 #注意保护好自己的密码
 #需要安装/usr/bin/expect 
 #测试3.0
-username=9p15p
+username=ldz
 password=ldz19980104
 
 nowtime=$(date "+%Y-%m-%d-%H:%M:%S")
