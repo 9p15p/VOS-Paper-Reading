@@ -10,7 +10,7 @@ password=ldz19980104
 nowtime=$(date "+%Y-%m-%d-%H:%M:%S")
 
 if [ -f ".gitignore" ];then
-	echo ".gtignore存在"
+	echo ".gitgnore存在"
 	if cat '.gitignore' | grep "commit_push.sh" > /dev/null
 		then
 		    echo "commit_push.sh已存在"
