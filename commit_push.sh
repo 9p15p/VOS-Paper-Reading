@@ -26,6 +26,7 @@ else
 fi
 
 git add *
+git status
 git commit -m \'$nowtime\'
 
 cat > github.sh <<-EOF
